@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./flip-card.css"> <!--- Link for stylesheet --->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> <!--- Bxoicon link for Logos -->
+    <title>3D Flip Card</title>
+</head>
+<body>
+    <div class="card-container">
+
+        <input type="checkbox" id="btnControl"/>
+            <label class="btn" for="btnControl">
+                <span class="tooltip-down">
+                    <span class="tooltiptext-down">Click To See Details</span>  
+                    <i class='bx bx-rotate-right flip'></i>
+                </span>
+            </label>        
+
+        <div class="flip-card front">
+            <div class="display-picture">
+            </div>
+            <div class="name">
+                JAMES ROBERT
+            </div>
+            <div class="profession">
+                I AM A DESIGNER
+            </div>
+            <div class="social-links">                
+                <div class="tooltip">
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <span class="tooltiptext">Twitter</span>
+                </div>
+                <div class="tooltip">
+                    <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+                    <span class="tooltiptext">Linked In</span>
+                </div>
+                <div class="tooltip">
+                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                    <span class="tooltiptext">Facebook</span>   
+                </div>
+                <div class="tooltip">
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <span class="tooltiptext">Instagram</span>
+                </div>               
+            </div>
+        </div>
+
+        <div class="flip-card back">
+            <div class="header">
+                <div class="display-picture">
+                </div>
+                <div class="name">
+                    JAMES ROBERT
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor urna, scelerisque luctus gravida vitae, sodales a purus. Pellentesque blandit diam ac metus imperdiet, vitae eleifend massa egestas. Maecenas ut aliquam dolor. Nullam elementum urna ipsum, sit amet tincidunt purus ullamcorper eu. Proin feugiat justo mi, ut facilisis turpis auctor sed. Cras semper, dui et pellentesque posuere, lectus augue pulvinar mauris, at venenatis justo purus eget ligula. Ut sed cursus.
+                </p>
+            </div>
+        </div>
+</body>
+</html>

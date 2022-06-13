@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@200&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  height: 50vh;
+  width: 285px;
+  position: relative;
+}
+
+.card-container .flip-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Front Side  */
+.card-container .front {
+  height: 60vh;
+  width: 285px;
+  margin: auto;
+  border: #355317 solid 2px;
+  background: linear-gradient(180deg, #66de93 0%, rgba(102, 222, 147, 0) 100%);
+  border-radius: 12px;
+  cursor: default;
+}
+
+#btnControl:checked ~ .front {
+  transform: rotateY(-180deg);
+}
+
+#btnControl {
+  display: none;
+}
+
+.card-container .front .display-picture {
+  width: 100px;
+  height: 100px;
+  border: black solid;
+  border-radius: 50%;
+  background-image: url("./Media/Man-Image.jpg");
+  background-size: cover;
+  background-color: white;
+  margin: 10px auto;
+  padding: 50px;
+}
+
+.card-container .front .name {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 6px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.card-container .front .profession {
+  color: #fff;
+  font-family: Bitter;
+  text-align: center;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  position: relative;
+  top: 30px;
+}
+
+.card-container .front .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 80px;
+  width: 100%;
+}
+
+.card-container .front .social-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-container .front .social-links i:hover {
+  font-size: 35px;
+}
+
+.card-container .front .social-links a i {
+  font-size: 28px;
+  padding: 10px;
+  transition: 0.3s all;
+}
+
+/* Tooltip for Social Links */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(136, 132, 132);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgb(136, 132, 132) transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Tooltip For Click Me */
+.tooltip-down {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-down .tooltiptext-down {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(136, 132, 132);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -42px;
+}
+
+.tooltip-down .tooltiptext-down::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(136, 132, 132) transparent transparent transparent;
+}
+
+.card-container:hover .tooltiptext-down {
+  visibility: visible;
+}
+
+/* Back Side */
+.card-container .back {
+  backface-visibility: hidden;
+  height: 60vh;
+  width: 285px;
+  margin: auto;
+  border: #355317 solid 2px;
+  background: linear-gradient(180deg, #66de93 0%, rgba(102, 222, 147, 0) 100%);
+  border-radius: 12px;
+  cursor: default;
+  transform: rotateY(180deg);
+}
+
+#btnControl:checked ~ .back {
+  transform: rotateY(0deg);
+}
+
+.card-container .back .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card-container .back .header .display-picture {
+  width: 50px;
+  height: 50px;
+  border: black solid;
+  border-radius: 50%;
+  background-image: url("./Media/Man-Image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 12px;
+}
+
+.card-container .back .header .name {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+  border-bottom: solid black 0.2px;
+}
+
+.card-container .back .description {
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+}
+
+.flip {
+  position: absolute;
+  color: #fff;
+  top: 8px;
+  padding: 0 10px;
+  z-index: 99999;
+  font-size: 20px;
+  cursor: pointer;
+}
